@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       if (searchTerm.length >= 3) {
-        fetch(`https://student-finder-backend.vercel.app/api/students/search${searchTerm}`)
+        fetch(`http://localhost:5000/api/students/search?q=${searchTerm}`)
           .then(res => res.json())
           .then(data => setResults(data))
           .catch(err => console.error("Error:", err));
